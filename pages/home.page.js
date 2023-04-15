@@ -7,6 +7,7 @@ exports.HomePage = class HomePage {
       this.emailField = page.getByRole('textbox', { name: 'Business Email' });
       this.passwordField = page.getByPlaceholder('Password');
       this.loginButton = page.getByRole('button', { name: 'Sign me in' });
+      this.signInLogo = page.getByRole('heading', { name: 'Sign in' });
     }
    
     async signIn(email, password) {
@@ -20,6 +21,9 @@ exports.HomePage = class HomePage {
       await this.passwordField.fill(password)
     }
   
+    async verifySignInHeaderDisplayed(){
+      await expect(this.signInLogo).toBeVisible();
+    }
   
     async clickSignIn() {
       await this.signInButton.click()

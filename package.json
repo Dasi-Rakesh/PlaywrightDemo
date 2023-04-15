@@ -2,9 +2,11 @@
   "name": "playwrightdemo",
   "version": "1.0.0",
   "description": "",
+  "type":"commonjs",
   "main": "index.js",
   "scripts": {
-    
+    "test": "SECRET_KEY='Pass123$'  npx playwright test --project=chromium --headed",
+    "bTest": "cd tests && SECRET_KEY='Pass123$' node bstackdemo.spec.js"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +15,7 @@
     "@playwright/test": "^1.32.3"
   },
   "dependencies": {
-    "crypto-js": "^4.1.1"
+    "crypto-js": "^4.1.1",
+    "playwright": "^1.32.3"
   }
 }
